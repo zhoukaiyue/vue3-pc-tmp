@@ -4,7 +4,7 @@
  * @Author: zhoukai
  * @Date: 2022-11-28 16:42:22
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-11-29 15:11:19
+ * @LastEditTime: 2022-12-05 10:51:22
  */
 import { fileURLToPath, URL } from 'node:url';
 
@@ -14,7 +14,7 @@ import vueJsx from '@vitejs/plugin-vue-jsx';
 import { createHtmlPlugin } from 'vite-plugin-html';
 import AutoImport from 'unplugin-auto-import/vite';
 import Components from 'unplugin-vue-components/vite';
-import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
+import { NaiveUiResolver } from 'unplugin-vue-components/resolvers';
 import { visualizer } from 'rollup-plugin-visualizer';
 
 const RegImg = /\.(png|jpe?g|gif|svg)(\?.*)?$/;
@@ -32,12 +32,16 @@ export default defineConfig(({ command, mode }) => {
         plugins: [
             vue(),
             vueJsx(),
-            // ...
             AutoImport({
-                resolvers: [ElementPlusResolver()]
+                imports: [
+                    'vue',
+                    {
+                        'naive-ui': ['useDialog', 'useMessage', 'useNotification', 'useLoadingBar']
+                    }
+                ]
             }),
             Components({
-                resolvers: [ElementPlusResolver()]
+                resolvers: [NaiveUiResolver()]
             }),
             // 对html模板做压缩处理。文档【https://www.npmjs.com/package/vite-plugin-html】
             createHtmlPlugin({
