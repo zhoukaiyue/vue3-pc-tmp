@@ -4,12 +4,12 @@
  * @Author: zhoukai
  * @Date: 2022-11-28 16:48:31
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-12-05 17:20:40
+ * @LastEditTime: 2022-12-06 14:38:19
 -->
 
 <template>
     <div class="errpage err404">
-        <n-result status="404" title="404 资源不存在" size="huge" description="生活总归带点荒谬">
+        <n-result status="404" title="抱歉，您访问的页面不存在。" size="huge" description="生活总归带点荒谬">
             <template #footer>
                 <n-button @click="goHomeEvt">回到首页</n-button>
             </template>
