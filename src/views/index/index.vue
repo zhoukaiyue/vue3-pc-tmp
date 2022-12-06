@@ -4,10 +4,10 @@
  * @Author: zhoukai
  * @Date: 2022-11-28 16:32:36
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-11-29 14:28:14
+ * @LastEditTime: 2022-12-06 15:19:22
 -->
 <template>
-    <div class="index fs-10">主页</div>
+    <div class="fs-24 fw-blod tl-center">主页</div>
 </template>
 
 <script lang="ts">
@@ -30,8 +30,4 @@ export default {
     }
 };
 </script>
-<style scoped lang="scss">
-.index {
-    display: flex;
-}
-</style>
+<style scoped lang="scss"></style>

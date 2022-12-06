@@ -4,11 +4,12 @@
  * @Author: zhoukai
  * @Date: 2022-11-28 16:42:22
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-11-28 17:31:19
+ * @LastEditTime: 2022-12-06 15:00:51
  */
 /** 重置样式 */
 import '@/assets/css/reset.css';
 import '@/assets/css/global.scss';
+import 'uno.css';
 
 import { createApp } from 'vue';
 import { createPinia } from 'pinia';

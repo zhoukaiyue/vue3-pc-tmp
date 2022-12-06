@@ -4,7 +4,7 @@
  * @Author: zhoukai
  * @Date: 2022-11-28 16:42:22
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-12-05 17:15:04
+ * @LastEditTime: 2022-12-06 15:12:00
  */
 import { fileURLToPath, URL } from 'node:url';
 
@@ -16,6 +16,11 @@ import AutoImport from 'unplugin-auto-import/vite';
 import Components from 'unplugin-vue-components/vite';
 import { NaiveUiResolver } from 'unplugin-vue-components/resolvers';
 import { visualizer } from 'rollup-plugin-visualizer';
+/**
+ * * unocss插件，原子css
+ * https://github.com/antfu/unocss
+ */
+import Unocss from 'unocss/vite';
 
 const RegImg = /\.(png|jpe?g|gif|svg)(\?.*)?$/;
 const RegMedia = /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/;
@@ -32,6 +37,7 @@ export default defineConfig(({ command, mode }) => {
         plugins: [
             vue(),
             vueJsx(),
+            Unocss(),
             AutoImport({
                 imports: [
                     'vue',
