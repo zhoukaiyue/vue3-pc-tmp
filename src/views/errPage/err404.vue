@@ -1,10 +1,10 @@
 <!--
- * @Descripttion: 
+ * @Descripttion: 404页面
  * @version: 
  * @Author: zhoukai
  * @Date: 2022-11-28 16:48:31
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-12-05 11:15:33
+ * @LastEditTime: 2022-12-05 17:20:40
 -->
 
 <template>
@@ -37,8 +37,9 @@ export default {
 
     methods: {
         goHomeEvt() {
+            // 返回首页
             this.$router.push({
-                path: '/'
+                path: '/index'
             });
         }
     }
