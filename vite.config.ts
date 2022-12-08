@@ -4,7 +4,7 @@
  * @Author: zhoukai
  * @Date: 2022-11-28 16:42:22
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-12-06 15:12:00
+ * @LastEditTime: 2022-12-08 15:23:38
  */
 import { fileURLToPath, URL } from 'node:url';
 
@@ -33,7 +33,10 @@ export default defineConfig(({ command, mode }) => {
     // 设置第三个参数为 '' 来加载所有环境变量，而不管是否有 `VITE_` 前缀。
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const env = loadEnv(mode, process.cwd(), '');
+
     return {
+        // 开发或生产环境服务的公共基础路径。
+        base: env.VITE_APP_PUBLIC_URL,
         plugins: [
             vue(),
             vueJsx(),
