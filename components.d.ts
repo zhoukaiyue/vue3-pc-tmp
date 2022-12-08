@@ -9,7 +9,13 @@ declare module '@vue/runtime-core' {
     export interface GlobalComponents {
         NButton: typeof import('naive-ui')['NButton'];
         NCard: typeof import('naive-ui')['NCard'];
+        NH2: typeof import('naive-ui')['NH2'];
+        NLayout: typeof import('naive-ui')['NLayout'];
+        NLayoutContent: typeof import('naive-ui')['NLayoutContent'];
+        NLayoutSider: typeof import('naive-ui')['NLayoutSider'];
+        NMenu: typeof import('naive-ui')['NMenu'];
         NResult: typeof import('naive-ui')['NResult'];
+        NSpace: typeof import('naive-ui')['NSpace'];
         RouterLink: typeof import('vue-router')['RouterLink'];
         RouterView: typeof import('vue-router')['RouterView'];
     }

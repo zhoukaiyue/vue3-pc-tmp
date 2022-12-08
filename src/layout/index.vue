@@ -1,10 +1,10 @@
 <!--
- * @Descripttion: 
+ * @Descripttion: 基础布局组件
  * @version: 
  * @Author: zhoukai
  * @Date: 2022-12-06 10:57:44
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-12-06 10:58:56
+ * @LastEditTime: 2022-12-08 15:10:12
 -->
 <!-- <script setup lang='ts'></script> -->
 <template>

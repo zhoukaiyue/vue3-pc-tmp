@@ -6,6 +6,7 @@ specifiers:
   '@types/node': ^16.11.68
   '@types/nprogress': ^0.2.0
   '@types/qs': ^6.9.7
+  '@vicons/ionicons5': ^0.12.0
   '@vitejs/plugin-vue': ^3.1.2
   '@vitejs/plugin-vue-jsx': ^2.0.1
   '@vue/eslint-config-prettier': ^7.0.0
@@ -56,6 +57,7 @@ devDependencies:
   '@types/jsdom': 20.0.0
   '@types/node': 16.18.0
   '@types/nprogress': 0.2.0
+  '@vicons/ionicons5': 0.12.0
   '@vitejs/plugin-vue': 3.1.2_vite@3.1.8+vue@3.2.41
   '@vitejs/plugin-vue-jsx': 2.0.1_vite@3.1.8+vue@3.2.41
   '@vue/eslint-config-prettier': 7.0.0_5t6g5rrqvlktilv3n3sw5svbdi
@@ -923,6 +925,10 @@ packages:
     transitivePeerDependencies:
       - rollup
     dev: false
+
+  /@vicons/ionicons5/0.12.0:
+    resolution: {integrity: sha512-Iy1EUVRpX0WWxeu1VIReR1zsZLMc4fqpt223czR+Rpnrwu7pt46nbnC2ycO7ItI/uqDLJxnbcMC7FujKs9IfFA==}
+    dev: true
 
   /@vitejs/plugin-vue-jsx/2.0.1_vite@3.1.8+vue@3.2.41:
     resolution: {integrity: sha512-lmiR1k9+lrF7LMczO0pxtQ8mOn6XeppJDHxnpxkJQpT5SiKz4SKhKdeNstXaTNuR8qZhUo5X0pJlcocn72Y4Jg==}

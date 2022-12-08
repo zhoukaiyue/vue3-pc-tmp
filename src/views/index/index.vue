@@ -4,30 +4,23 @@
  * @Author: zhoukai
  * @Date: 2022-11-28 16:32:36
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-12-06 15:19:22
+ * @LastEditTime: 2022-12-07 15:30:48
 -->
 <template>
-    <div class="fs-24 fw-blod tl-center">主页</div>
+    <div class="fs-24 fw-blod tl-center">
+        <!-- 进入开发者中心 -->
+        <n-button type="info" @click="devEvt"> 开发者中心 </n-button>
+    </div>
 </template>
 
-<script lang="ts">
-import { reactive, toRefs, onBeforeMount, onMounted } from 'vue';
-export default {
-    name: 'index',
-    props: [],
-    setup() {
-        const state = reactive({});
-        onBeforeMount(() => {
-            console.log('2.组件挂载页面之前执行----onBeforeMount');
-        });
-        onMounted(() => {
-            console.log('3.-组件挂载到页面之后执行-------onMounted');
-        });
-        const refState = toRefs(state);
-        return {
-            ...refState
-        };
-    }
-};
+<script lang="ts" setup>
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
+function devEvt() {
+    router.push({
+        path: '/dev'
+    });
+}
 </script>
 <style scoped lang="scss"></style>
