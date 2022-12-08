@@ -4,7 +4,7 @@
  * @Author: zhoukai
  * @Date: 2022-11-28 16:42:22
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-12-08 15:23:38
+ * @LastEditTime: 2022-12-08 15:54:45
  */
 import { fileURLToPath, URL } from 'node:url';
 
@@ -118,8 +118,10 @@ export default defineConfig(({ command, mode }) => {
                     emptyOutDir: true, //清空root下dist文件夹内容
                     // 分包配置，配置完成自动按需加载
                     manualChunks: {
-                        vue: ['vue', 'vue-router'],
-                        tool: ['qs']
+                        vue: ['vue', 'vue-router', 'pinia'],
+                        tool: ['qs'],
+                        'naive-ui': ['naive-ui'],
+                        axios: ['axios']
                     }
                 }
             }

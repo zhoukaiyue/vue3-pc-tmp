@@ -6,7 +6,7 @@
  * @LastEditors: zhoukai
  * @LastEditTime: 2022-12-06 14:33:33
  */
-const layOut = import('@/layout/index.vue');
+const layOut = () => import('@/layout/index.vue');
 const routes = [
     {
         path: '/',

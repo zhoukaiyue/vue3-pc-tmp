@@ -4,9 +4,9 @@
  * @Author: zhoukai
  * @Date: 2022-12-06 16:14:33
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-12-07 15:11:34
+ * @LastEditTime: 2022-12-08 16:24:41
  */
-const devLayOut = import('@/layout/devLayout/index.vue');
+const devLayOut = () => import('@/layout/devLayout/index.vue');
 // icon
 import { LogoVue, LogoCss3 } from '@vicons/ionicons5';
 const routes = [
