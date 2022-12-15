@@ -2,11 +2,11 @@
  * @Descripttion:用于根据当前请求的信息，生成请求 Key；
  * @version:
  * @Author: zhoukai
- * @Date: 2022-11-29 14:21:38
+ * @Date: 2022-11-09 14:21:38
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-11-29 15:08:26
+ * @LastEditTime: 2022-12-09 10:46:50
  */
-import type { AxiosRequestConfigNew } from '../type';
+import type { AxiosRequestConfigNew } from '../../type';
 // 工具函数
 import { isJson, isJsonStr } from '@/utils/validate';
 

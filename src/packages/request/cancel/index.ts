@@ -2,9 +2,9 @@
  * @Descripttion: 取消请求。
  * @version:
  * @Author: zhoukai
- * @Date: 2022-11-28 15:28:16
+ * @Date: 2022-11-09 15:28:16
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-11-29 15:07:17
+ * @LastEditTime: 2022-11-17 14:40:22
  * @名词解释：
  * 1、如何判定重复请求?
  * 答：如果请求地址、请求方式、请求参数一样，那么我们就能认为是同一个请求。
@@ -14,7 +14,7 @@ import axios from 'axios';
 import type { AxiosRequestConfigNew } from '../type';
 
 // 根据当前请求的信息，生成请求 Key
-import { generateReqKey } from '../utils/generateReqKey';
+import { generateReqKey } from './utils/generateReqKey';
 
 // Map对象保存键值对。任何值(对象或者原始值) 都可以作为一个键或一个值。
 const pendingMap = new Map();
