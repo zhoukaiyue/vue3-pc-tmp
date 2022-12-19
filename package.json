@@ -23,7 +23,6 @@
     },
     "dependencies": {
         "@types/qs": "^6.9.7",
-        "autoprefixer": "^10.4.13",
         "axios": "^1.2.0",
         "nprogress": "^0.2.0",
         "pinia": "^2.0.23",
