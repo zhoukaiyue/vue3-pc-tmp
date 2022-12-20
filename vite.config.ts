@@ -4,7 +4,7 @@
  * @Author: zhoukai
  * @Date: 2022-11-28 16:42:22
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-12-08 15:54:45
+ * @LastEditTime: 2022-12-20 13:50:26
  */
 import { fileURLToPath, URL } from 'node:url';
 
@@ -87,10 +87,12 @@ export default defineConfig(({ command, mode }) => {
         // 构建选项
         build: {
             cssCodeSplit: false, //打包为一个 CSS 文件
-            //构建时清空outDir目录。
+            //是指打包时先清空上一次构建生成的目录（outDir）。
             emptyOutDir: true,
             //指定生成静态资源的存放路径
             assetsDir: 'assets',
+            //chunk 大小警告的限制， 单位kbs，超过这个范围会报警告。
+            chunkSizeWarningLimit: 1000,
             // Rollup 打包配置
             rollupOptions: {
                 plugins: [],
@@ -114,13 +116,11 @@ export default defineConfig(({ command, mode }) => {
                         }
                         return 'assets/[ext]/[name]-[hash][extname]';
                     },
-                    chunkSizeWarningLimit: 1500, //上调单个模块文件限制的上限
-                    emptyOutDir: true, //清空root下dist文件夹内容
                     // 分包配置，配置完成自动按需加载
                     manualChunks: {
                         vue: ['vue', 'vue-router', 'pinia'],
                         tool: ['qs'],
-                        'naive-ui': ['naive-ui'],
+                        ui: ['naive-ui', 'unocss'],
                         axios: ['axios']
                     }
                 }
