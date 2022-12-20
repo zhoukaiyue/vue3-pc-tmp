@@ -169,6 +169,9 @@ vue3-pc-tmp                             //
 ├─ .eslintrc.cjs                        // eslint配置文件
 ├─ .npmrc                               //
 ├─ .prettierrc.js                       // postcss配置文件
+├─ .vscode                              //
+│  ├─ extensions.json                   //
+│  └─ settings.json                     //
 ├─ auto-imports.d.ts                    //
 ├─ components.d.ts                      //
 ├─ env.d.ts                             //
@@ -181,7 +184,7 @@ vue3-pc-tmp                             //
 │     ├─ img                            //
 │     │  └─ favicon.ico                 //
 │     └─ js                             //
-├─ README.md                            //
+├─ README.md                            // 项目自述文件
 ├─ src                                  //
 │  ├─ App.vue                           //
 │  ├─ assets                            // 静态资源 hash处理
