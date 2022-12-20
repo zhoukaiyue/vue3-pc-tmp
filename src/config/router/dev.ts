@@ -4,26 +4,35 @@
  * @Author: zhoukai
  * @Date: 2022-12-06 16:14:33
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-12-08 16:24:41
+ * @LastEditTime: 2022-12-20 14:28:00
  */
 const devLayOut = () => import('@/layout/devLayout/index.vue');
 // icon
-import { LogoVue, LogoCss3 } from '@vicons/ionicons5';
+import { LogoWebComponent, LogoCss3, InformationCircleSharp } from '@vicons/ionicons5';
 const routes = [
     {
         path: '/dev',
-        redirect: '/dev/base',
+        redirect: '/dev/info',
         component: devLayOut,
         meta: {
             title: '基础功能'
         },
         children: [
             {
+                path: 'info',
+                name: 'info',
+                meta: {
+                    title: 'vue3-pc-tmp简介',
+                    icon: InformationCircleSharp
+                },
+                component: () => import('@/views/dev/info/index.vue')
+            },
+            {
                 path: 'base',
                 name: 'base',
                 meta: {
                     title: '基础组件',
-                    icon: LogoVue
+                    icon: LogoWebComponent
                 },
                 component: () => import('@/views/dev/base/index.vue')
             },
