@@ -37,8 +37,6 @@ pnpm lint:prettier
 
 ## 开发基础规范
 
-<font  color="red">如果设计稿的尺寸不是 750，而是 375 或其他大小，请在 .postcssrc.js 中及时调整 rootValue。</font>
-
 -   🚀 重要、复杂逻辑一定要写注释；
 -   🚀 代码规范按照 eslint 的规则来，做到 no waring 和 no error；
 -   🚀 项目业务开发，优先使用 vue 全家桶技术栈开发项目，预编译使用 sass；
