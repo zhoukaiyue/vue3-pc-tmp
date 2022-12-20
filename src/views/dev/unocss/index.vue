@@ -10,8 +10,8 @@
 <template>
     <div>
         <div>
-            <a href="https://uno.antfu.me/" target="_blank" c-blue text-18>UnoCSS</a>是一个原子 CSS
-            引擎而不是一个框架。一切都在设计时考虑了灵活性和性能。UnoCSS
+            <a href="https://uno.antfu.me/" target="_blank" c-blue text-18>UnoCSS</a>
+            是一个原子 CSS 引擎而不是一个框架。一切都在设计时考虑了灵活性和性能。UnoCSS
             中没有核心实用程序，所有功能都是通过预设提供的。
         </div>
 

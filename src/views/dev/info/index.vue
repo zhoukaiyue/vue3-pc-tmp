@@ -9,8 +9,9 @@
 <script setup lang="ts"></script>
 <template>
     <div text-18 lh-50>
-        <n-tag type="info"> vue3-pc-tmp </n-tag> 是基于 create-vue（它是 Vue 官方的项目脚手架工具）。 创建的基于 Vite
-        的项目。使用 naiveui 作为 UI 组件库的一个PC端脚手架，开箱即用。
+        <n-tag type="info">vue3-pc-tmp</n-tag>
+        是基于 create-vue（它是 Vue 官方的项目脚手架工具）。 创建的基于 Vite 的项目。使用 naiveui 作为 UI
+        组件库的一个PC端脚手架，开箱即用。
     </div>
 </template>
 
