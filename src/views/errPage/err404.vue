@@ -4,11 +4,11 @@
  * @Author: zhoukai
  * @Date: 2022-11-28 16:48:31
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-12-06 14:38:19
+ * @LastEditTime: 2022-12-20 14:04:46
 -->
 
 <template>
-    <div class="errpage err404">
+    <div w-full h-full flex items-center justify-center>
         <n-result status="404" title="抱歉，您访问的页面不存在。" size="huge" description="生活总归带点荒谬">
             <template #footer>
                 <n-button @click="goHomeEvt">回到首页</n-button>
@@ -45,13 +45,4 @@ export default {
     }
 };
 </script>
-<style scoped lang="scss">
-.errpage,
-.err404 {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-</style>
+<style scoped lang="scss"></style>
