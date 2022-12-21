@@ -15,6 +15,7 @@ vue3-pc-tmp 是基于 create-vue（它是 Vue 官方的项目脚手架工具）�
 -   Vetur v0.35.0+
 -   Eslint v2.2.6+
 -   Prettier - Code formatter v9.5.0+
+-   UnoCSS v0.47.6+
 
 ## 快速开发
 
