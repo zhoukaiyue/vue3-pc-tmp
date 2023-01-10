@@ -1,6 +1,6 @@
 # 简介
 
-vue3-pc-tmp 是基于 create-vue（它是 Vue 官方的项目脚手架工具）。 创建的基于 Vite 的项目。使用 naiveui 作为 UI 组件库的一个 PC 端脚手架，开箱即用。
+vue3-pc-tmp 基于 Vue3.x setup + TypeScript + Vite + Pinia + naiveui + sass + unocss + axios（封装）等流行技术栈构建 PC 端模板脚手架，开箱即用。
 
 # 技术规范
 
@@ -51,30 +51,30 @@ pnpm lint:prettier
 
 ### 基础组件名。 【注：src/components 目录。】
 
-> 应该全部以一个特定的前缀 Base 开头。
+> 基础组件文件命名应该以 base 为前缀命名，以示其唯一性，并且以横线连接。
 
 ```
 例子：
 src
 └─ resources
    └─ components
-      |- BaseButton.vue
-      |- BaseTable.vue
-      |- BaseIcon.vue
+      └─ base-button
+         ├─ index.vue      //源码
+         └─ README.md      //组件使用说明文档
 ```
 
 ### 业务组件名。 【注：src/views/components 目录。】
 
-> 应该全部以一个特定的前缀 The 开头。
+> 业务组件文件命名应该以 the 为前缀命名，以示其唯一性，并且以横线连接。
 
 ```
 例子：
 src
 └─ views
    └─ components
-      |- TheButton.vue
-      |- TheTable.vue
-      |- TheIcon.vue
+      └─ the-button
+         ├─ index.vue      //源码
+         └─ README.md      //组件使用说明文档
 ```
 
 ### 路由文件创建与命名。 【注：src/config/router 目录。】
@@ -174,7 +174,7 @@ vue3-pc-tmp                             //
 ├─ auto-imports.d.ts                    //
 ├─ components.d.ts                      //
 ├─ env.d.ts                             //
-├─ index.html                           // template模板
+├─ index.html                           // 入口文件
 ├─ package.json                         // 项目描述文件
 ├─ pnpm-lock.yaml                       // pnpm自锁文件
 ├─ public                               // 静态资源
@@ -193,17 +193,17 @@ vue3-pc-tmp                             //
 │  │  ├─ img                            // 所有img放置目录
 │  │  └─ js                             // 全局静态js放置目录
 │  ├─ config                            // 业务配置目录
-│  │  ├─ apis                           // 所有业务接口配置目录
+│  │  ├─ apis                           // 所有接口相关
 │  │  │  ├─ dev.ts                      //
 │  │  │  ├─ README.md                   // 业务接口创建规范
 │  │  │  └─ validation                  // 相关接口ts验证器
 │  │  │     ├─ getListDev.ts            //
 │  │  │     └─ index.ts                 //
-│  │  ├─ router                         // 所有业务router配置目录
+│  │  ├─ router                         // 所有路由相关
 │  │  │  ├─ dev.ts                      //
 │  │  │  ├─ errpage.ts                  //
 │  │  │  └─ index.ts                    //
-│  │  └─ store                          // 所有全局状态管理配置目录
+│  │  └─ store                          // 状态商店（所有全局状态管理相关）
 │  │     └─ dev.store.ts                //
 │  ├─ layout                            //
 │  │  ├─ devLayout                      // 开发者中心布局组件
@@ -213,7 +213,7 @@ vue3-pc-tmp                             //
 │  │  └─ index.vue                      // 默认布局组件
 │  ├─ main.ts                           // 入口js
 │  ├─ packages                          // 依赖的第三方包或插件
-│  │  ├─ request                        // axios请求库
+│  │  ├─ request                        // axios请求库封装
 │  │  │  ├─ cancel                      //
 │  │  │  │  ├─ index.ts                 //
 │  │  │  │  └─ utils                    //
@@ -228,17 +228,17 @@ vue3-pc-tmp                             //
 │  │  │  │  └─ index.ts                 //
 │  │  │  └─ type                        //
 │  │  │     └─ index.ts                 //
-│  │  ├─ router                         // vue-router
+│  │  ├─ router                         // vue-router 核心封装
 │  │  │  ├─ index.ts                    //
 │  │  │  └─ routes.ts                   //
-│  │  └─ stores                         // pinia
+│  │  └─ stores                         // pinia集中导出
 │  │     └─ counter.ts                  //
-│  ├─ utils                             // 全局工具类
+│  ├─ utils                             // 工具库
 │  │  ├─ getCurrentUrlAssignKey.ts      //
 │  │  ├─ index.ts                       //
 │  │  ├─ sleep.ts                       //
 │  │  └─ validate.ts                    //
-│  └─ views                             // 页面级资源
+│  └─ views                             // 视图
 │     ├─ components                     //
 │     ├─ dev                            //
 │     │  ├─ base                        //

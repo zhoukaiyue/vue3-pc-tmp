@@ -4,14 +4,14 @@
  * @Author: zhoukai
  * @Date: 2022-12-20 14:15:00
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-12-20 14:27:07
+ * @LastEditTime: 2023-01-10 11:04:38
 -->
 <script setup lang="ts"></script>
 <template>
     <div text-18 lh-50>
         <n-tag type="info">vue3-pc-tmp</n-tag>
-        是基于 create-vue（它是 Vue 官方的项目脚手架工具）。 创建的基于 Vite 的项目。使用 naiveui 作为 UI
-        组件库的一个PC端脚手架，开箱即用。
+        基于 Vue3.x setup + TypeScript + Vite + Pinia + naiveui + sass + unocss + axios（封装）等流行技术栈构建 PC
+        端模板脚手架，开箱即用。
     </div>
 </template>
 
