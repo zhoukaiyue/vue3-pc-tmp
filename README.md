@@ -1,6 +1,7 @@
 # 简介
 
-vue3-pc-tmp 基于 Vue3.x setup + TypeScript + Vite + Pinia + naiveui + sass + unocss + axios（封装）等流行技术栈构建 PC 端模板脚手架，开箱即用。
+vue3-pc-tmp 基于 Vue3.x setup + TypeScript + Vite + Pinia + naiveui + sass + unocss + axios（封装）+
+Eslint + Prettier 等流行技术栈构建 PC 端模板脚手架，开箱即用。
 
 # 技术规范
 
