@@ -6,7 +6,8 @@ vue3-pc-tmp 基于 Vue3.x setup + TypeScript + Vite + Pinia + naiveui + sass + u
 
 ## 环境要求
 
--   node 14+
+-   node >14
+-   pnpm >=7
 -   支持现代浏览器以及 Chrome >= 51、iOS >= 10.0（与 Vue 3 一致）。
 
 ## 编辑器以及对应扩展
