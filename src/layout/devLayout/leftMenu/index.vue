@@ -4,7 +4,7 @@
  * @Author: zhoukai
  * @Date: 2022-12-06 16:31:06
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-12-07 15:22:24
+ * @LastEditTime: 2023-02-02 09:53:52
 -->
 
 <template>
@@ -20,7 +20,6 @@
 </template>
 
 <script lang="ts" setup>
-import { h, ref } from 'vue';
 import type { Component } from 'vue';
 import type { MenuOption } from 'naive-ui';
 import { NIcon } from 'naive-ui';

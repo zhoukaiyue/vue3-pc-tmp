@@ -4,7 +4,7 @@
  * @Author: zhoukai
  * @Date: 2022-10-26 16:42:22
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-12-05 10:15:50
+ * @LastEditTime: 2023-02-02 09:54:34
  */
 /* eslint-env node */
 require('@rushstack/eslint-patch/modern-module-resolution');
@@ -15,7 +15,8 @@ module.exports = {
         'plugin:vue/vue3-essential',
         'eslint:recommended',
         '@vue/eslint-config-typescript',
-        '@vue/eslint-config-prettier'
+        '@vue/eslint-config-prettier',
+        './.eslintrc-auto-import.json'
     ],
     parserOptions: {
         ecmaVersion: 'latest'

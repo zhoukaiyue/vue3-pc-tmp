@@ -4,12 +4,9 @@
  * @Author: zhoukai
  * @Date: 2022-11-28 16:32:36
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-12-20 14:51:09
+ * @LastEditTime: 2023-02-02 10:46:34
 -->
 <script lang="ts" setup>
-import { ref } from 'vue';
-import { useRouter } from 'vue-router';
-
 // 默认打开模态框
 const showModal = ref(true);
 

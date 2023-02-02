@@ -4,7 +4,7 @@
  * @Author: zhoukai
  * @Date: 2022-11-28 16:42:22
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-12-20 13:50:26
+ * @LastEditTime: 2023-02-02 09:46:13
  */
 import { fileURLToPath, URL } from 'node:url';
 
@@ -12,7 +12,9 @@ import { defineConfig, loadEnv } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
 import { createHtmlPlugin } from 'vite-plugin-html';
+// 自动导入 API vite插件。文档地址：https://github.com/antfu/unplugin-auto-import
 import AutoImport from 'unplugin-auto-import/vite';
+// 按需自动加载组件
 import Components from 'unplugin-vue-components/vite';
 import { NaiveUiResolver } from 'unplugin-vue-components/resolvers';
 import { visualizer } from 'rollup-plugin-visualizer';
@@ -41,14 +43,40 @@ export default defineConfig(({ command, mode }) => {
             vue(),
             vueJsx(),
             Unocss(),
+            // 自动导入 API vite插件
+            // 以下导入的分别是vue（框架）以及官方生态库 vue-router、pinia 的相关api
+            // 如果你需要用到相关库的api,可在文件中直接使用而不需要再次import
+            // 注：有可能部分api未被自动导入，如果你直接使用时报错，请手动inport，如 vue-router 库的 createRouter,
             AutoImport({
+                // targets to transform
+                include: [
+                    /\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
+                    /\.vue$/,
+                    /\.vue\?vue/ // .vue
+                ],
                 imports: [
+                    // presets
                     'vue',
+                    'vue-router',
+                    'pinia',
+                    // custom
                     {
                         'naive-ui': ['useDialog', 'useMessage', 'useNotification', 'useLoadingBar']
                     }
-                ]
+                ],
+                // Filepath to generate corresponding .d.ts file.
+                // Defaults to './auto-imports.d.ts' when `typescript` is installed locally.
+                // Set `false` to disable.
+                dts: 'src/auto-imports.d.ts',
+                // Generate corresponding .eslintrc-auto-import.json file.
+                // eslint globals Docs - https://eslint.org/docs/user-guide/configuring/language-options#specifying-globals
+                eslintrc: {
+                    enabled: true, // Default `false`
+                    filepath: './.eslintrc-auto-import.json', // Default `./.eslintrc-auto-import.json`
+                    globalsPropValue: true // Default `true`, (true | false | 'readonly' | 'readable' | 'writable' | 'writeable')
+                }
             }),
+            // 按需自动加载组件
             Components({
                 resolvers: [NaiveUiResolver()]
             }),

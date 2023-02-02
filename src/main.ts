@@ -4,15 +4,12 @@
  * @Author: zhoukai
  * @Date: 2022-11-28 16:42:22
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-12-06 15:00:51
+ * @LastEditTime: 2023-02-02 09:52:16
  */
 /** 重置样式 */
 import '@/assets/css/reset.css';
 import '@/assets/css/global.scss';
 import 'uno.css';
-
-import { createApp } from 'vue';
-import { createPinia } from 'pinia';
 
 import App from './App.vue';
 // 导入router配置

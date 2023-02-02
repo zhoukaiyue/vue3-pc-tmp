@@ -4,7 +4,7 @@
  * @Author: zhoukai
  * @Date: 2022-11-28 16:48:31
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-12-20 14:04:46
+ * @LastEditTime: 2023-02-02 10:46:45
 -->
 
 <template>
@@ -18,7 +18,6 @@
 </template>
 
 <script lang="ts">
-import { reactive, toRefs, onBeforeMount, onMounted } from 'vue';
 export default {
     props: [],
     setup() {
