@@ -1,6 +1,6 @@
 {
     "name": "vue3-pc-tmp",
-    "version": "0.0.0",
+    "version": "1.1.5",
     "scripts": {
         "dev": "vite  --mode development",
         "start": "npm run dev",
