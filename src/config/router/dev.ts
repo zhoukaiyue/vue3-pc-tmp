@@ -4,11 +4,15 @@
  * @Author: zhoukai
  * @Date: 2022-12-06 16:14:33
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-12-20 14:28:00
+ * @LastEditTime: 2023-02-02 17:08:34
  */
 const devLayOut = () => import('@/layout/devLayout/index.vue');
-// icon
-import { LogoWebComponent, LogoCss3, InformationCircleSharp } from '@vicons/ionicons5';
+/**
+ * 侧边导航左侧Icon
+ * icon官网：https://xicons.org/#/
+ * 添加方法：选择 ionicons5 并 Copy Name，在下方 import
+ */
+import { LogoWebComponent, LogoCss3, InformationCircleSharp, Storefront } from '@vicons/ionicons5';
 const routes = [
     {
         path: '/dev',
@@ -45,6 +49,16 @@ const routes = [
                 },
 
                 component: () => import('@/views/dev/unocss/index.vue')
+            },
+            {
+                path: 'pinia',
+                name: 'pinia',
+                meta: {
+                    title: 'pinia',
+                    icon: Storefront
+                },
+
+                component: () => import('@/views/dev/pinia/index.vue')
             }
         ]
     }

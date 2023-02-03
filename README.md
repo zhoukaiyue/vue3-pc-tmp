@@ -206,7 +206,12 @@ vue3-pc-tmp                             //
 │  │  │  ├─ errpage.ts                  //
 │  │  │  └─ index.ts                    //
 │  │  └─ store                          // 状态商店（所有全局状态管理相关）
-│  │     └─ dev.store.ts                //
+│  │     ├─ dev                         // store模块
+│  │     │  ├─ index.ts                 // store核心代码
+│  │     │  ├─ README.md                // store 模块使用说明
+│  │     │  └─ validation               // ts 校验器
+│  │     │     └─ index.ts              //
+│  │     └─ README.md                   // store模块创建说明
 │  ├─ layout                            //
 │  │  ├─ devLayout                      // 开发者中心布局组件
 │  │  │  ├─ index.vue                   //
@@ -233,8 +238,6 @@ vue3-pc-tmp                             //
 │  │  ├─ router                         // vue-router 核心封装
 │  │  │  ├─ index.ts                    //
 │  │  │  └─ routes.ts                   //
-│  │  └─ stores                         // pinia集中导出
-│  │     └─ counter.ts                  //
 │  ├─ utils                             // 工具库
 │  │  ├─ getCurrentUrlAssignKey.ts      //
 │  │  ├─ index.ts                       //
