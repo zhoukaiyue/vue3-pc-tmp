@@ -12,6 +12,7 @@ export const handleLocalStorage = {
      * @param {string} key 键name
      * @param {*} value 值
      */
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     set(key: string, value: any) {
         localStorage.setItem(key, JSON.stringify(value));
     },

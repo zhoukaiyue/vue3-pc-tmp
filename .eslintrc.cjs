@@ -1,10 +1,10 @@
 /*
- * @Descripttion:
+ * @Descripttion: eslint配置文件
  * @version:
  * @Author: zhoukai
  * @Date: 2022-10-26 16:42:22
  * @LastEditors: zhoukai
- * @LastEditTime: 2023-02-08 10:08:37
+ * @LastEditTime: 2023-02-08 14:42:53
  */
 /* eslint-env node */
 require('@rushstack/eslint-patch/modern-module-resolution');
@@ -14,7 +14,7 @@ module.exports = {
     extends: [
         'plugin:vue/vue3-essential',
         'eslint:recommended',
-        '@vue/eslint-config-typescript',
+        '@vue/eslint-config-typescript/recommended', // https://www.npmjs.com/package/@vue/eslint-config-typescript
         '@vue/eslint-config-prettier',
         './.eslintrc-auto-import.json'
     ],

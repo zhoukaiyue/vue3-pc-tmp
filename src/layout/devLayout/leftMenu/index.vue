@@ -39,7 +39,7 @@ const renderIcon = function (icon: Component) {
 
 //------ data --------
 const selectedKey = ref(route.name); //菜单当前的选中值
-let menuOpt = ref([] as MenuOption[]); //菜单数据
+const menuOpt = ref([] as MenuOption[]); //菜单数据
 
 /**
  * 获取菜单的数据
