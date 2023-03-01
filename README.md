@@ -239,6 +239,15 @@ vue3-pc-tmp                             //
 │  │  ├─ router                         // vue-router 核心封装
 │  │  │  ├─ index.ts                    //
 │  │  │  └─ routes.ts                   //
+│  ├─ resources                         // 全局基础资源如基础组件、全局插件、全局指令等
+│  │  ├─ components                     // 基础组件
+│  │  │  └─ base-message                //
+│  │  │     ├─ index.vue                //
+│  │  │     └─ README.md                //
+│  │  └─ plugin                         // 全局插件
+│  ├─ types                             // 类型补充文件
+│  │  ├─ README.md                      //
+│  │  └─ window.d.ts                    // 声明为 window 补充的东西
 │  ├─ utils                             // 工具库
 │  │  ├─ getCurrentUrlAssignKey.ts      //
 │  │  ├─ handle-local.ts                //
