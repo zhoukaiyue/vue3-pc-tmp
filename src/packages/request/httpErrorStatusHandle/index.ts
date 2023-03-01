@@ -4,22 +4,11 @@
  * @Author: zhoukai
  * @Date: 2022-12-08 16:52:53
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-12-15 15:41:37
+ * @LastEditTime: 2023-03-01 11:39:48
  */
-import { computed, ref } from 'vue';
+
 // axios 实例类型定义
 import type { AxiosStatic } from 'axios';
-
-// 借助 Naive UI 的 message 组件来提示信息
-import type { ConfigProviderProps } from 'naive-ui';
-import { createDiscreteApi, darkTheme, lightTheme } from 'naive-ui';
-const themeRef = ref<'light' | 'dark'>('light');
-const configProviderPropsRef = computed<ConfigProviderProps>(() => ({
-    theme: themeRef.value === 'light' ? lightTheme : darkTheme
-}));
-const { message } = createDiscreteApi(['message'], {
-    configProviderProps: configProviderPropsRef
-});
 
 /**
  * 处理异常
@@ -85,5 +74,6 @@ export function httpErrorStatusHandle(error: any, axios: AxiosStatic) {
     if (error.message.includes('timeout')) messageInfo = '网络请求超时！';
     if (error.message.includes('Network')) messageInfo = window.navigator.onLine ? '服务端异常！' : '您断网了！';
 
-    message.error(messageInfo);
+    // 弹出提示
+    window.$message.error(messageInfo);
 }
