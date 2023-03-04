@@ -224,7 +224,7 @@ const sendSmsEvt = (callback: () => void) => {
 |  inputProps   |  输入框 Props 【与 naiveui 官方一致】  |      Object      |   -    |
 |  inputSlots   |              输入框 Slots              |      Object      |   -    |
 
-### inputSlots 详解
+### inputSlots 详解 【只适用于 type="text" 的输入框】
 
 |  参数  |         说明         | slots 名称 |
 | :----: | :------------------: | :--------: |
