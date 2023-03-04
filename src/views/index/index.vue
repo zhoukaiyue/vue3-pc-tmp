@@ -1,10 +1,10 @@
 <!--
- * @Descripttion: 
+ * @Descripttion: 首页
  * @version: 
  * @Author: zhoukai
  * @Date: 2022-11-28 16:32:36
  * @LastEditors: zhoukai
- * @LastEditTime: 2023-02-02 10:46:34
+ * @LastEditTime: 2023-03-02 22:26:03
 -->
 <script lang="ts" setup>
 // 默认打开模态框
@@ -17,23 +17,16 @@ function handlePositiveClick() {
         path: '/dev'
     });
 }
-// 关闭模态框
-function handleCloseModal() {
-    showModal.value = false;
-}
 </script>
 <template>
     <div pt-20>
-        <span m-10 text-18>首页</span>
         <!-- 进入开发者中心模态框 -->
-        <n-modal v-model:show="showModal">
+        <n-modal v-model:show="showModal" :mask-closable="false">
             <n-dialog
                 title="提示"
+                :closable="false"
                 content="进入开发者中心"
-                v-on:close="handleCloseModal"
-                @negative-click="handleCloseModal"
                 @positive-click="handlePositiveClick"
-                negative-text="不确认"
                 positive-text="确认"
             />
         </n-modal>
