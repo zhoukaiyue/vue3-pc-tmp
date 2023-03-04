@@ -14,8 +14,6 @@ import type { FormItemRule } from 'naive-ui/es/form/src/interface';
 const formItemList = [
     {
         name: 'usname', //名称，作为提交表单时的标识符
-        key: 'usname',
-        type: '', //使用场景
         // formItemProps 是formItem的相关props配置，直接参考naiveui FormItem-Props 配置即可
         formItemProps: {
             label: '用户名',

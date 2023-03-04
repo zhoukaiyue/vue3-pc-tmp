@@ -4,7 +4,7 @@
  * @Author: zhoukai
  * @Date: 2023-03-04 17:06:51
  * @LastEditors: zhoukai
- * @LastEditTime: 2023-03-04 17:17:56
+ * @LastEditTime: 2023-03-04 22:43:39
 -->
 <script setup lang="ts">
 /** 导入子组件 START*/
@@ -24,7 +24,7 @@ const props = defineProps({
     formItemList: {
         type: Object,
         default: () => {
-            return {};
+            return [];
         }
     }
 });

@@ -61,7 +61,7 @@ export default {
             this.msg = '重新发送';
             this.time = 0;
             this.disabled = false;
-            this.$emit('finishEvt');
+            this.$emit('finish');
         }
     }
 };
