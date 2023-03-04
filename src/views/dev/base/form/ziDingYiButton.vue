@@ -4,19 +4,19 @@
  * @Author: zhoukai
  * @Date: 2022-12-06 16:06:01
  * @LastEditors: zhoukai
- * @LastEditTime: 2023-03-04 17:50:36
+ * @LastEditTime: 2023-03-04 22:03:20
 -->
 <script setup lang="ts">
 import BaseForm from '@/resources/components/base-form/index.vue';
+import TheSendsmsButton from '@/views/components/the-sendsms-button/index.vue';
 import type { FormItemRule } from 'naive-ui/es/form/src/interface';
-
 const loading = ref(false);
 
 // 这是传给theForm 组件的表单构造项数据
 const formItemList = [
     {
         name: 'tel', //名称，作为提交表单时的标识符
-        type: '', //使用场景
+        type: 'text', //使用场景
         // formItemProps 是formItem的相关props配置，直接参考naiveui FormItem-Props 配置即可
         formItemProps: {
             label: '手机号',
@@ -32,7 +32,8 @@ const formItemList = [
         },
         // inputProps 是输入框的相关props配置，直接参考naiveui Input-Props 配置即可
         inputProps: {
-            placeholder: '请输入手机号码'
+            placeholder: '请输入手机号码',
+            allowInput: (value: string) => !value || /^\d+$/.test(value)
         }
     },
     {
@@ -85,34 +86,35 @@ const failed = (values: any) => {
     loading.value = false;
 };
 
-// 获取短信验证码
-const getSmsEvt = () => {
+// 发送短信验证码
+const sendSmsEvt = (callback: () => void) => {
     nextTick(() => {
         baseForm.value
             ?.handleValidate(['tel'])
             .then(() => {
                 //成功，没有返回值
+                callback();
             })
             .catch((err) => {
                 console.log(err);
-                //errors: object[]
             });
     });
 };
 </script>
 <template>
     <div class="zi-ding-yi-button">
-        <n-tag type="info" mb-20>自定义提交按钮</n-tag>
+        <n-tag type="info" mb-20>自定义提交按钮 && 输入框右侧按钮</n-tag>
         <base-form ref="baseForm" :formItemList="formItemList" @submit="submit" @failed="failed">
             <template #submitBtn>
                 <div flex justify-end>
-                    <n-button w="100px" :disabled="loading" type="primary" attr-type="button" @click="sublimeEvt">
+                    <n-button w="100px" :disabled="loading" round type="primary" attr-type="button" @click="sublimeEvt">
                         提 交
                     </n-button>
                 </div>
             </template>
+            <!-- 自定义输入框右侧按钮 -->
             <template #smsRightBtn>
-                <n-button type="info" @click="getSmsEvt">获取验证码</n-button>
+                <the-sendsms-button @click="sendSmsEvt"></the-sendsms-button>
             </template>
         </base-form>
     </div>
