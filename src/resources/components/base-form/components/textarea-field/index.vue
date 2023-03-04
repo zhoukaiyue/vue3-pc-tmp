@@ -4,17 +4,15 @@
  * @Author: zhoukai
  * @Date: 2023-03-03 13:54:40
  * @LastEditors: zhoukai
- * @LastEditTime: 2023-03-04 15:36:52
+ * @LastEditTime: 2023-03-04 23:23:47
 -->
 <template>
-    <div flex justify-between flex-nowrap w-full class="textarea-field">
-        <n-input v-bind="options" type="textarea" />
-    </div>
+    <n-input v-bind="options" type="textarea" class="textarea-field" />
 </template>
 
 <script lang="ts">
 export default {
-    name: 'textField',
+    name: 'textareaField',
     props: {
         /**
          * inputProps 是输入框的相关props配置，直接参考naiveui Input-Props 配置即可
