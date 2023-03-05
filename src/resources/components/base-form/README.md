@@ -226,9 +226,9 @@ const sendSmsEvt = (callback: () => void) => {
 
 ### inputSlots 详解 【只适用于 type="text" 的输入框】
 
-|  参数  |         说明         | slots 名称 |
-| :----: | :------------------: | :--------: |
-| button | 自定义输入框尾部按钮 |   string   |
+|  参数  |         说明         |  类型  |
+| :----: | :------------------: | :----: |
+| button | 自定义输入框尾部按钮 | string |
 
 ## Events
 
@@ -247,13 +247,8 @@ const sendSmsEvt = (callback: () => void) => {
 | handleValidate | 验证表单，支持传入一个或多个 name 来验证单个或部分表单项，不传入 name 时，会验证所有表单项 | name?: string[]|- |
 | handleRestoreValidation | 重置表单项的验证提示 | - |- |
 
-## Slots
+## Form Slots
 
-|     名称     |                说明                | 参数 |
-| :----------: | :--------------------------------: | :--: |
-|  submitBtn   |       自定义表单底部操作按钮       |  -   |
-| handleSubmit | 提交表单，与点击提交按钮的效果等价 |  -   |
-
-```
-
-```
+|   名称    |          说明          | 参数 |
+| :-------: | :--------------------: | :--: |
+| submitBtn | 自定义表单底部操作按钮 |  -   |
