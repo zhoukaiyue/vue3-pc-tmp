@@ -4,13 +4,13 @@
  * @Author: zhoukai
  * @Date: 2022-10-18 17:02:54
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-12-09 18:09:28
+ * @LastEditTime: 2022-12-09 15:16:52
  */
 import { $post } from '@/packages/request';
 
 import type { getListDevValidator } from './validation';
 
-export const getListDev = (params: { id: object }): Promise<getListDevValidator.ReturnType> => {
+export const getListDev = (params: getListDevValidator.ParamType): Promise<getListDevValidator.ReturnType> => {
     return $post('/mock/14/demo/getList', params, {
         enableCancelModel: true,
         enableRetryModel: true,
