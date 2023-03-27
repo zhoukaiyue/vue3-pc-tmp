@@ -4,7 +4,7 @@
  * @Author: zhoukai
  * @Date: 2022-11-28 11:03:13
  * @LastEditors: zhoukai
- * @LastEditTime: 2023-03-02 22:05:13
+ * @LastEditTime: 2023-03-27 13:53:15
  */
 const routes = [
     {
@@ -15,8 +15,7 @@ const routes = [
         path: '/index',
         name: 'index',
         meta: {
-            title: '首页',
-            keepAlive: true
+            title: '首页'
         },
         // 路由级代码拆分
         // 这会为此路由生成一个单独的块 (index.[hash].js)
