@@ -4,7 +4,7 @@
  * @Author: zhoukai
  * @Date: 2023-03-03 13:54:40
  * @LastEditors: zhoukai
- * @LastEditTime: 2023-03-03 16:56:41
+ * @LastEditTime: 2023-03-27 16:45:16
 -->
 <template>
     <div flex justify-between flex-nowrap w-full class="text-field">
@@ -44,7 +44,7 @@ export default {
          */
         value: {
             type: String,
-            required: true
+            default: ''
         }
     },
     setup(props) {
