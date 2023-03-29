@@ -1,7 +1,7 @@
 # 简介
 
 vue3-pc-tmp 基于 Vue3.x setup + TypeScript + Vite + Pinia + naiveui + sass + unocss + axios（封装）+
-Eslint + Prettier 等流行技术栈构建 PC 端模板脚手架，开箱即用。
+Eslint + Prettier + dayjs 等流行技术栈构建 PC 端模板脚手架，开箱即用。
 
 # 技术规范
 
@@ -163,117 +163,139 @@ src
 ## 项目目录说明
 
 ```
-vue3-pc-tmp                             //
-├─ .env.development                     // 开发环境配置文件
-├─ .env.production                      // 生产环境配置文件
-├─ .env.test                            // 测试、灰度(预发布|预上线) 模式
-├─ .eslintignore                        // eslint白名单
-├─ .eslintrc.cjs                        // eslint配置文件
-├─ .npmrc                               //
-├─ .prettierrc.js                       // postcss配置文件
-├─ .vscode                              //
-│  ├─ extensions.json                   //
-│  └─ settings.json                     //
-├─ auto-imports.d.ts                    //
-├─ components.d.ts                      //
-├─ env.d.ts                             //
-├─ index.html                           // 入口文件
-├─ package.json                         // 项目描述文件
-├─ pnpm-lock.yaml                       // pnpm自锁文件
-├─ public                               // 静态资源
-│  └─ static                            //
-│     ├─ css                            //
-│     ├─ img                            //
-│     │  └─ favicon.ico                 //
-│     └─ js                             //
-├─ README.md                            // 项目自述文件
-├─ src                                  //
-│  ├─ App.vue                           //
-│  ├─ assets                            // 静态资源 hash处理
-│  │  ├─ css                            // 全局css放置目录
-│  │  │  ├─ global.scss                 //
-│  │  │  └─ reset.css                   //
-│  │  ├─ img                            // 所有img放置目录
-│  │  └─ js                             // 全局静态js放置目录
-│  ├─ config                            // 业务配置目录
-│  │  ├─ apis                           // 所以接口相关
-│  │  │  ├─ dev                         // 接口切片
-│  │  │  │  ├─ index.ts                 // 接口创建文件
-│  │  │  │  └─ validation               // 接口验证器相关
-│  │  │  │     ├─ index.ts              // 接口验证器统一导出文件
-│  │  │  │     └─ module                // 接口验证器切片
-│  │  │  │        └─ getListDev.ts      // 接口验证器核心文件
-│  │  │  └─ README.md                   // 接口创建说明文档
-│  │  ├─ router                         // 所有路由相关
-│  │  │  ├─ dev.ts                      //
-│  │  │  ├─ errpage.ts                  //
-│  │  │  └─ index.ts                    //
-│  │  └─ store                          // 状态商店（所有全局状态管理相关）
-│  │     ├─ dev                         // store模块
-│  │     │  ├─ index.ts                 // store核心代码
-│  │     │  ├─ README.md                // store 模块使用说明
-│  │     │  └─ validation               // ts 校验器
-│  │     │     └─ index.ts              //
-│  │     └─ README.md                   // store模块创建说明
-│  ├─ layout                            //
-│  │  ├─ devLayout                      // 开发者中心布局组件
-│  │  │  ├─ index.vue                   //
-│  │  │  └─ leftMenu                    //
-│  │  │     └─ index.vue                //
-│  │  └─ index.vue                      // 默认布局组件
-│  ├─ main.ts                           // 入口js
-│  ├─ packages                          // 依赖的第三方包或插件
-│  │  ├─ request                        // axios请求库封装
-│  │  │  ├─ cancel                      //
-│  │  │  │  ├─ index.ts                 //
-│  │  │  │  └─ utils                    //
-│  │  │  │     └─ generateReqKey.ts     //
-│  │  │  ├─ httpErrorStatusHandle       //
-│  │  │  │  └─ index.ts                 //
-│  │  │  ├─ index.ts                    //
-│  │  │  ├─ loading                     //
-│  │  │  │  └─ index.ts                 //
-│  │  │  ├─ README.md                   //
-│  │  │  ├─ retry                       //
-│  │  │  │  └─ index.ts                 //
-│  │  │  └─ type                        //
-│  │  │     └─ index.ts                 //
-│  │  ├─ router                         // vue-router 核心封装
-│  │  │  ├─ index.ts                    //
-│  │  │  └─ routes.ts                   //
-│  ├─ resources                         // 全局基础资源如基础组件、全局插件、全局指令等
-│  │  ├─ components                     // 基础组件
-│  │  │  └─ base-message                //
-│  │  │     ├─ index.vue                //
-│  │  │     └─ README.md                //
-│  │  └─ plugin                         // 全局插件
-│  ├─ types                             // 类型补充文件
-│  │  ├─ README.md                      //
-│  │  └─ window.d.ts                    // 声明为 window 补充的东西
-│  ├─ utils                             // 工具库
-│  │  ├─ getCurrentUrlAssignKey.ts      //
-│  │  ├─ handle-local.ts                //
-│  │  ├─ handle-session.ts              //
-│  │  ├─ sleep.ts                       //
-│  │  └─ validate.ts                    //
-│  └─ views                             // 视图
-│     ├─ components                     //
-│     ├─ dev                            //
-│     │  ├─ base                        //
-│     │  │  └─ index.vue                //
-│     │  ├─ info                        //
-│     │  │  └─ index.vue                //
-│     │  └─ unocss                      //
-│     │     └─ index.vue                //
-│     ├─ errPage                        //
-│     │  └─ err404.vue                  //
-│     └─ index                          //
-│        └─ index.vue                   //
-├─ tsconfig.app.json                    //
-├─ tsconfig.config.json                 //
-├─ tsconfig.json                        //
-├─ tsconfig.vitest.json                 //
-├─ unocss.config.js                     // unocss配置文件
-└─ vite.config.ts                       // vite配置文件
+vue3-pc-tmp
+├─ .env.development                      // 开发环境配置文件
+├─ .env.production                       // 生产环境配置文件
+├─ .env.test                             // 测试、灰度(预发布|预上线) 模式
+├─ .eslintignore                         // eslint白名单
+├─ .eslintrc-auto-import.json            //
+├─ .eslintrc.cjs                         // eslint配置文件
+├─ .npmrc                                // npm配置文件
+├─ .prettierrc.js                        // prettier配置文件
+├─ .vscode                               // 覆盖默认vscode配置（项目级）
+│  ├─ extensions.json                    //
+│  └─ settings.json                      //
+├─ env.d.ts                              // 环境类型声明文件
+├─ index.html                            // templat模板
+├─ package.json                          // 项目自述文件
+├─ pnpm-lock.yaml                        // pnpm自锁文件
+├─ public                                // 公共资源文件（不会hash处理）
+│  └─ static                             // 静态资源目录
+│     ├─ css                             //
+│     ├─ img                             //
+│     │  └─ favicon.ico                  //
+│     └─ js                              //
+├─ README.md                             // 项目使用说明文档
+├─ src                                   // 业务层
+│  ├─ App.vue                            // 顶级router-view
+│  ├─ assets                             // 静态资源（hash处理）
+│  │  ├─ css                             // css放置目录
+│  │  │  ├─ global.scss                  // 全局css
+│  │  │  └─ reset.css                    // 重置css
+│  │  ├─ img                             // 图片资源放置目录
+│  │  └─ js                              // js资源放置目录
+│  ├─ config                             // 业务配置目录
+│  │  ├─ apis                            // 所以接口相关
+│  │  │  ├─ dev                          // 接口切片
+│  │  │  │  ├─ index.ts                  // 接口创建文件
+│  │  │  │  └─ validation                // 接口验证器相关
+│  │  │  │     ├─ index.ts               // 接口验证器统一导出文件
+│  │  │  │     └─ module                 // 接口验证器切片
+│  │  │  │        └─ getListDev.ts       // 接口验证器核心文件
+│  │  │  └─ README.md                    // 接口创建说明文档
+│  │  ├─ router                          // 所有路由相关
+│  │  │  ├─ dev.ts                       //
+│  │  │  ├─ errpage.ts                   //
+│  │  │  └─ index.ts                     //
+│  │  └─ store                           // 状态商店（所有全局状态管理相关）
+│  │     ├─ dev                          // store模块
+│  │     │  ├─ index.ts                  // store核心代码
+│  │     │  ├─ README.md                 // store 模块使用说明
+│  │     │  └─ validation                // ts 校验器
+│  │     │     └─ index.ts               //
+│  │     └─ README.md                    // store模块创建说明
+│  ├─ layout                             // 布局相关
+│  │  ├─ app-main                        // app布局组件
+│  │  └─ devLayout                       // 开发者中心布局组件
+│  │     ├─ index.vue                    //
+│  │     └─ leftMenu                     //
+│  │        └─ index.vue                 //
+│  ├─ main.ts                            // 入口js文件
+│  ├─ packages                           // 依赖的第三方包或插件
+│  │  ├─ request                         // axios请求库封装
+│  │  │  ├─ cancel                       // 请求取消
+│  │  │  │  ├─ index.ts                  //
+│  │  │  │  └─ utils                     //
+│  │  │  │     └─ generateReqKey.ts      //
+│  │  │  ├─ httpErrorStatusHandle        // http错误处理
+│  │  │  │  └─ index.ts                  //
+│  │  │  ├─ index.ts                     // 请求库导出文件
+│  │  │  ├─ loading                      // 请求库loading
+│  │  │  │  └─ index.ts                  //
+│  │  │  ├─ README.md                    // 请求库使用说明文档
+│  │  │  ├─ retry                        // 请求重试
+│  │  │  │  └─ index.ts                  //
+│  │  │  └─ type                         // 请求库类型补充
+│  │  │     └─ index.ts                  //
+│  │  └─ router                          // vue-router封装
+│  │     ├─ index.ts                     //
+│  │     └─ routes.ts                    //
+│  ├─ resources                          // 全局基础组件、全局插件、全局自定义指令配置
+│  │  ├─ components                      // 全局基础组件
+│  │  │  └─ base-form                    // 全局基础组件-form表单组件
+│  │  │     ├─ components                //
+│  │  │     │  ├─ password-field         //
+│  │  │     │  │  └─ index.vue           //
+│  │  │     │  ├─ text-field             //
+│  │  │     │  │  └─ index.vue           //
+│  │  │     │  └─ textarea-field         //
+│  │  │     │     └─ index.vue           //
+│  │  │     ├─ index.vue                 //
+│  │  │     └─ README.md                 // 全局基础组件-form表单组件使用说明文档
+│  │  └─ plugin                          // 全局自定义插件
+│  │     ├─ index.ts                     // 全局自定义插件导出文件
+│  │     └─ message                      // 全局自定义插件-message
+│  │        ├─ index.ts                  //
+│  │        └─ README.md                 // 全局自定义插件-message使用说明文档
+│  ├─ types                              // 全局类型补充文件
+│  │  ├─ README.md                       //
+│  │  └─ window.d.ts                     //
+│  ├─ utils                              // 工具类
+│  │  ├─ dayjs.ts                        // dayjs二次封装
+│  │  ├─ getCurrentUrlAssignKey.ts       // 获取 当前url 指定参数的值
+│  │  ├─ handle-local.ts                 // 操作local
+│  │  ├─ handle-session.ts               // 操作session
+│  │  ├─ regex-utils.ts                  // 正则工具函数
+│  │  ├─ sleep.ts                        // 睡眠函数
+│  │  └─ validate.ts                     // 校验器函数
+│  └─ views                              // 视图层
+│     ├─ components                      // 业务组件
+│     │  └─ the-sendsms-button           // 业务组件-发送短信验证码按钮
+│     │     ├─ index.vue                 //
+│     │     └─ README.md                 //
+│     ├─ dev                             // 开发者中心相关视图
+│     │  ├─ base                         //
+│     │  │  ├─ form                      //
+│     │  │  │  ├─ jiChuYongFa.vue        //
+│     │  │  │  └─ ziDingYiButton.vue     //
+│     │  │  └─ index.vue                 //
+│     │  ├─ info                         //
+│     │  │  └─ index.vue                 //
+│     │  ├─ pinia                        //
+│     │  │  └─ index.vue                 //
+│     │  ├─ plugin                       //
+│     │  │  └─ index.vue                 //
+│     │  └─ unocss                       //
+│     │     └─ index.vue                 //
+│     ├─ errPage                         // 全局错误页
+│     │  └─ err404.vue                   //
+│     └─ index                           // 首页
+│        └─ index.vue                    //
+├─ tsconfig.app.json                     //
+├─ tsconfig.config.json                  //
+├─ tsconfig.json                         //
+├─ tsconfig.vitest.json                  //
+├─ unocss.config.js                      // unocss配置文件
+└─ vite.config.ts                        // vite配置文件
 
 ```
