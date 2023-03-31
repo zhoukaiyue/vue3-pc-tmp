@@ -3,6 +3,16 @@
 vue3-pc-tmp 基于 Vue3.x setup + TypeScript + Vite + Pinia + naiveui + sass + unocss + axios（封装）+
 Eslint + Prettier + dayjs 等流行技术栈构建 PC 端模板脚手架，开箱即用。
 
+# 支持的平台
+
+## 浏览器
+
+不支持 IE 浏览器。
+
+`Edge`、`Firefox`、`Chrome`、`Safari` 等现代浏览器的最新的 2 个版本确保会被支持。
+
+对于这些浏览器的其他版本中，由于开发资源的限制并没有做过严格的测试。但是我预期 vue3-pc-tmp 应该在这些浏览器不算太老的版本上能正常的运行（比如 2 年之内的版本）。如果你发现了任何问题欢迎来提 issue。
+
 # 技术规范
 
 ## 环境要求
