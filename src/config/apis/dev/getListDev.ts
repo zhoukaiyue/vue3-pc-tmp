@@ -4,11 +4,11 @@
  * @Author: zhoukai
  * @Date: 2022-10-18 17:02:54
  * @LastEditors: zhoukai
- * @LastEditTime: 2023-09-07 18:58:37
+ * @LastEditTime: 2023-09-22 16:22:16
  */
 import { $post } from '@/packages/request';
 
-import type { getListDevValidator } from './validation/getListDev.d';
+import type { getListDevValidator } from './validation/getListDev';
 
 export const getListDev = (params: getListDevValidator.ParamType): Promise<getListDevValidator.ReturnType> => {
     return $post('/mock/14/demo/getList', params, {

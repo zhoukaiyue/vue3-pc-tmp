@@ -11,9 +11,9 @@
 ```ts
 // app.vue
 // 导入功能接口函数
-import { getListDev } from '@/config/apis/dev';
+import { getListDev } from '@/config/apis/getListDev';
 // 导入接口验证器
-import type { getListDevValidator } from '@/config/apis/dev/validation';
+import type { getListDevValidator } from '@/config/apis/dev/validation/getListDev';
 export default {
     name: 'dev-request',
     props: [],
@@ -53,8 +53,8 @@ export default {
 ```
 ├─ apis
 │  ├─ dev                           // 接口切片
-│  │  ├─ index.ts                   // 接口创建文件
+│  │  ├─ getListDev.ts                   // 接口创建文件
 │  │  │  └─ validation              // 接口验证器相关
-│  │  │     └─ getListDev.ts        // 接口验证器核心文件
+│  │  │     └─ getListDev.d.ts        // 接口验证器核心文件
 │  └─ README.md                     // 接口创建说明文档
 ```
