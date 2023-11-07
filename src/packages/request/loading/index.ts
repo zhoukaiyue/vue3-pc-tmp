@@ -10,7 +10,7 @@
 // 计数
 let COUNT = 0;
 
-const laoding = {
+const loading = {
     show() {
         if (COUNT === 0) {
             console.log('开始loading');
@@ -26,4 +26,4 @@ const laoding = {
     }
 };
 
-export default laoding;
+export default loading;
